@@ -164,8 +164,6 @@ def takeDataElibrary(page_id = []):
     # xPath путь к нужному блоку таблицы
     table_xpath = "/html/body/div[2]/table/tbody/tr/td/table[1]/tbody/tr/td[2]/form/table/tbody/tr[2]/td[1]/table[5]/tbody"
     table_row = "/tr[%s]/td[%s]"
-    # ID нужной страницы
-    
     
     # В каком виде вывести результат csv или json
     rezult_type = "json"
