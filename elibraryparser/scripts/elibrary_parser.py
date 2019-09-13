@@ -164,12 +164,7 @@ def takeDataElibrary(page_id = []):
     # xPath путь к нужному блоку таблицы
     table_xpath = "/html/body/div[2]/table/tbody/tr/td/table[1]/tbody/tr/td[2]/form/table/tbody/tr[2]/td[1]/table[5]/tbody"
     table_row = "/tr[%s]/td[%s]"
-    
-    # В каком виде вывести результат csv или json
-    rezult_type = "json"
-    
-    # Имя файла в который сохранить
-    save_path = "rezult"
+
 
 
     # Опция чтобы не открывать окно
@@ -204,14 +199,10 @@ def takeDataElibrary(page_id = []):
     
     # Закрываем браузер
     browser.close()
-    
-    #saveRezult(full_rezult, rezult_type, save_path)
-    rezult_dict = convertTableToJson(full_rezult)
-    
+
     print("Закрытие браузера")
     # На всякий ждем пока закроется
     time.sleep(2)
     print("Усе")
     
-    return rezult_dict
-    
+    return full_rezult

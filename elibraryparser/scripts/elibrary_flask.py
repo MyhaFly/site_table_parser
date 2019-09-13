@@ -1,11 +1,8 @@
-
-import time
-
 from flask import Flask
 from flask import jsonify
 from flask.globals import request
 
-from utilitys.elibrary_parser import takeDataElibrary
+from scripts.elibrary_parser import takeDataElibrary, convertTableToJson
 
 
 app = Flask(__name__)
@@ -22,8 +19,10 @@ def get_users_count():
     
     # Вызов функции с парсингом
     rezult = takeDataElibrary(page_id)
+
+    rezult_dict = convertTableToJson(rezult)
     
-    return jsonify(rezult)
+    return jsonify(rezult_dict)
   
 if __name__ == "__main__":
     app.run()
